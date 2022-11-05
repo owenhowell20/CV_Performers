@@ -1,0 +1,91 @@
+\documentclass[showpacs,onecolumn,aps,floatfix,superscriptaddress,noshowpacs]{revtex4}
+\usepackage[mathlines]{lineno}% Enable numbering of text and display math
+\usepackage{soul}
+\usepackage{dsfont}
+\usepackage{amsmath,amssymb,graphicx,bm,color,mathrsfs,verbatim,epstopdf,dcolumn,cancel}
+
+\usepackage[fleqn]{mathtools}
+
+%\usepackage{ulem,cancel,comment}
+\newcommand{\tens}[1]{%
+	\mathbin{\mathop{\otimes}\limits_{#1}}%
+}
+
+%define path for figs
+
+%define path for figs
+\graphicspath{ }
+
+\usepackage{hyperref}
+\hypersetup{ 
+	colorlinks   =  true
+}
+
+% Use following commands if you want to see comments and deletions
+\newcommand*{\red}{\textcolor{red}}
+\newcommand*{\blue}{\textcolor{blue}}
+\newcommand*{\green}{\textcolor{green}}
+\newcommand*{\pink}{\textcolor{pink}}
+\newcommand*{\cyan}{\textcolor{cyan}}
+
+\DeclareMathOperator*{\argmin}{arg\,min}
+\DeclareMathOperator*{\argmax}{arg\,max}
+\usepackage[fleqn]{mathtools}
+	
+\begin{document}
+
+\title{ Time to Perform }
+
+
+
+\author{Owen Howell}
+\affiliation{Department of Electrical Engineering, Northeastern University, Huntington Ave., Boston, MA 02215, USA}
+\begin{abstract}
+We reproduce the results in the original performers paper and talk about some possible extensions.
+\end{abstract}
+\date{\today}
+\maketitle
+
+
+\section{Bidirectional Attention}
+Transformers have found use in a wide variety of machine learning tasks \cite{Vaswani_2017}. One of the key ideas in the transformer is the attention mechanism. Let $L$ be the size of an input sequence of tokens. Let $d$ be the latent transformer dimension. Let $Q,K,V \in \mathbb{R}^{L\times d}$. Then, the bidirectional dot-product attention is given by the following,
+\begin{align*}
+&\text{Att}(Q,K,V) = D^{-1} A V \\
+& A = \text{exp}(QK^{T}) \\
+& D = \text{diag}(A \bar{1} ) = \text{diag}(  \sum_{j=1}^{d} A_{ij}   )
+\end{align*}
+
+for large $L$, it requires both time consuming and memory expensive to compute $\text{Att}$. The paper \cite{Choromanski_2020} proposes using a stochastic kernel trick to approximately compute the attention function. This idea, which utilizes the Johnson-Linderhaus method, has a rich history \cite{Choromanski_2017}.
+
+
+\section{Kernel Trick}
+Let $\phi : \mathbb{R}^{d} \rightarrow \mathbb{R}^{r}$ be a random map. We define the kernel as
+\begin{align*}
+K(x,y) = \mathbb{E}[ \phi(x)^{T} \phi(y)  ] 
+\end{align*}
+the validity of this approach hinges on the quantity $\phi(x)^{T} \phi(y)$ being concentrated around its expectation. In matrix form, this involves approximating the matrix $A \in \mathbb{R}^{d \times d}$ as a stochastic low rank decomposition $A = \mathbb{E}[\phi^{T} \phi]$ where $\phi \in \mathbb{R}^{d \times r}$ with $r << d$. 
+
+\subsubsection{Soft-max Kernel}
+Consider the soft-max kernel defined as
+\begin{align*}
+SM(x,y) = \exp( x^{T} y )
+\end{align*}
+
+We will specifically be interested in approximating the softmax-kernel function. Specifically, we have that
+\begin{align*}
+SM(x,y) = \mathbb{E}_{\omega \sim N(0, \mathbb{1}_{d} )}[ \exp( \omega^{T}x - \frac{1}{2}||x||^{2} ) \exp( \omega^{T}y - \frac{1}{2}||y||^{2} )  ]
+\end{align*}
+
+The idea behind the paper \cite{Choromanski_2020} is to replace the soft-max kernel with a sample average of the quantity,
+\begin{align*}
+\mathbb{E}_{\omega \sim N(0, \mathbb{1}_{d} )}[ \exp( \omega^{T}x - \frac{1}{2}||x||^{2} ) \exp( \omega^{T}y - \frac{1}{2}||y||^{2} )  ]
+\end{align*}
+The validity of this approach depends on how concentrated $\exp( \omega^{T}x - \frac{1}{2}||x||^{2} ) \exp( \omega^{T}y - \frac{1}{2}||y||^{2} ) $ is around the expectation $\mathbb{E}_{\omega \sim N(0, \mathbb{1}_{d} )}[ \exp( \omega^{T}x - \frac{1}{2}||x||^{2} ) \exp( \omega^{T}y - \frac{1}{2}||y||^{2} )  ]$. Furthermore, the number of samples guaranteed to require convergence should be small enough that the stochastic method is faster then just computing the original attention matrix.
+
+
+\bibliographystyle{plain} 
+\bibliography{refs} 
+
+
+
+\end{document}
