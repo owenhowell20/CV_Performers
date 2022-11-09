@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  9 NOV 2022 17:53
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019) (preloaded format=pdflatex 2019.5.8)  9 NOV 2022 18:04
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -505,23 +505,23 @@ Package hyperref Warning: Difference (2) between bookmark levels is greater
 
 (./H_cluster.bbl [1{/usr/local/texlive/2019/texmf-var/fonts/map/pdftex/updmap/p
 dftex.map}])
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 91.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 96.
  [2]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 91.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 96.
  (./H_cluster.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 91.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 91.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 96.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 96.
 Package rerunfilecheck Info: File `H_cluster.out' has not changed.
-(rerunfilecheck)             Checksum: 9CD43F030B64276C7F08D54A57E14354;214.
+(rerunfilecheck)             Checksum: 0FEDFADA0A05797554700FEF25AE9CF9;268.
  ) 
 Here is how much of TeX's memory you used:
- 8564 strings out of 492616
- 123374 string characters out of 6129482
- 236688 words of memory out of 5000000
- 12322 multiletter control sequences out of 15000+600000
+ 8566 strings out of 492616
+ 123397 string characters out of 6129482
+ 235688 words of memory out of 5000000
+ 12323 multiletter control sequences out of 15000+600000
  15480 words of font info for 59 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 42i,10n,28p,518b,473s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 42i,10n,28p,518b,471s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 ></usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb><
 /usr/local/texlive/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></
@@ -537,10 +537,10 @@ e/2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti7.pfb></usr/local/texlive/
 2019/texmf-dist/fonts/type1/public/amsfonts/cm/cmti9.pfb></usr/local/texlive/20
 19/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></usr/local/texliv
 e/2019/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm7.pfb>
-Output written on H_cluster.pdf (2 pages, 147098 bytes).
+Output written on H_cluster.pdf (2 pages, 147937 bytes).
 PDF statistics:
- 104 PDF objects out of 1000 (max. 8388607)
- 83 compressed objects within 1 object stream
- 10 named destinations out of 1000 (max. 500000)
- 33 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 108 PDF objects out of 1000 (max. 8388607)
+ 87 compressed objects within 1 object stream
+ 11 named destinations out of 1000 (max. 500000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 

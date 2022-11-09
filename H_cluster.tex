@@ -83,6 +83,11 @@ The idea behind the paper \cite{Choromanski_2020} is to replace the soft-max ker
 The validity of this approach depends on how concentrated $\exp( \omega^{T}x - \frac{1}{2}||x||^{2} ) \exp( \omega^{T}y - \frac{1}{2}||y||^{2} ) $ is around the expectation $\mathbb{E}_{\omega \sim N(0, \mathbb{1}_{d} )}[ \exp( \omega^{T}x - \frac{1}{2}||x||^{2} ) \exp( \omega^{T}y - \frac{1}{2}||y||^{2} )  ]$. Furthermore, the number of samples guaranteed to require convergence should be small enough that the stochastic method is faster then just computing the original attention matrix.
 
 
+\subsection{Datasets}
+
+We will test the performer on a few standard datasets. 
+
+
 \bibliographystyle{plain} 
 \bibliography{refs} 
 
