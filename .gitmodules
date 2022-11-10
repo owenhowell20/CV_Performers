@@ -1,0 +1,3 @@
+[submodule "detr_comparisons/detr"]
+	path = detr_comparisons/detr
+	url = git@github.com:facebookresearch/detr.git
