@@ -1,3 +1,6 @@
 [submodule "detr_comparisons/detr"]
 	path = detr_comparisons/detr
 	url = git@github.com:facebookresearch/detr.git
+[submodule "detr_comparisons/performer-pytorch"]
+	path = detr_comparisons/performer-pytorch
+	url = git@github.com:lucidrains/performer-pytorch.git
