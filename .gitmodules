@@ -4,3 +4,6 @@
 [submodule "detr_comparisons/performer-pytorch"]
 	path = detr_comparisons/performer-pytorch
 	url = git@github.com:lucidrains/performer-pytorch.git
+[submodule "detr_comparisons/cocoapi"]
+	path = detr_comparisons/cocoapi
+	url = git@github.com:cocodataset/cocoapi.git
