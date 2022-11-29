@@ -15,8 +15,8 @@ catIds = coco.getCatIds(catNms=['cat'])
 imgIds = coco.getImgIds(catIds=catIds)
 images = coco.loadImgs(imgIds)
 print("category size: " + str(len(images)))
-if len(images) > 2000:
-    images = images[:1999]   #change this if you want more/less images
+# if len(images) > 2000:
+#     images = images[:1999]   #change this if you want more/less images
 if not(os.path.exists("./coco_data/coco_subset/")):
     os.makedirs("./coco_data/coco_subset/")
 # Save the images into a local folder
